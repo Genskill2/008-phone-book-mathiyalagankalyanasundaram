@@ -31,7 +31,7 @@ entry create_entry_node(char *, char *);  /* Create a new entry
 void free_entries(entry ); /* TBD Given the first node of a linked list
                                of entries, will free all the nodes */ 
 
-void write_all_entries(entry ); / Given the first node of a linked
+void write_all_entries(entry ); /* Given the first node of a linked
                                     list of entries, will delete the
                                     database file on the disk and save
                                     the given entries into the file */
@@ -228,7 +228,7 @@ int delete(FILE *db_file, char *name) {
   entry *p = load_entries(db_file);
   entry *base = p;
   entry *prev = NULL;
-  entry del = NULL ; /* Node to be deleted */
+  entry *del = NULL ; /* Node to be deleted */
   int deleted = 0;
   while (p!=NULL) {
     if (strcmp(p->name, name) == 0) {
